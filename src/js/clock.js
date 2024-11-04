@@ -35,7 +35,7 @@ function calculateTimeDifference(targetDate, targetTime) {
 // setInterval(updateTimeAndDate, 100);
 
 function updateTimeAndDate() {
-    const displayStr = calculateTimeDifference('2024-11-26', '08:00:00');
+    const displayStr = calculateTimeDifference('2024-11-27', '08:00:00');
     for (let i = 0; i < LEN; i++) { 
         document.getElementById('char' + i + '1').textContent = displayStr[i]; 
         document.getElementById('char' + i + '2').textContent = displayStr[i];
