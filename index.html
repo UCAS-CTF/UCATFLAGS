@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>UCATFLAGS 赛前小贴士</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./src/css/nav0.css">
+    <link rel="stylesheet" href="./src/css/style0.css">
+</head>
+
+<body>
+    <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; z-index: 9999;" id="Loading"></iframe>
+    <ul class="icon-nav">
+        <li> 
+            <a href = "#n1" id = "k0" onClick = "selected(0);">
+                <i class="fa fa-home"></i> 
+                <span>首页</span> 
+            </a> 
+        </li>
+        <li> 
+            <a href = "#n1" id = "k1" onClick = "selected(1);">
+                <i class="fa fa-file-code-o"></i> 
+                <span>编程基础 PPC</span> 
+            </a> 
+        </li>
+        <li> 
+            <a href = "#n2" id = "k2" onClick = "selected(2);">
+                <i class="fa fa-bug"></i> 
+                <span>二进制 Binary</span> 
+            </a> 
+        </li>
+        <li> 
+            <a href = "#n3" id = "k3" onClick = "selected(3);">
+                <i class="fa fa-key"></i> 
+                <span>密码学 Crypto</span> 
+            </a> 
+        </li>
+        <li> 
+            <a href = "#n4" id = "k4" onClick = "selected(4);">
+                <i class="fa fa-cloud"></i> 
+                <span>Web安全 Web</span> 
+            </a> 
+        </li>
+        <li> 
+            <a href = "#n5" id = "k5" onClick = "selected(5);">
+                <i class="fa fa-wrench"></i> 
+                <span>安全杂项 Misc</span> 
+            </a> 
+        </li>
+        <li class="split"> 
+            <a href = "#n6" id = "k6" onClick = "selected(6);">
+                <i class="fa fa-bell"></i> 
+                <span>通知 Notice</span> 
+            </a> 
+        </li>
+    </ul>
+    <div class="content" id="n0">
+        <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; display: block; z-index:9;" id="n0Loading"></iframe>
+    </div>
+    <div class="content" id="n1">
+        <iframe src="./warmup/ppc/ppc.html"></iframe>
+    </div>
+    <div class="content" id="n2">
+        <iframe src="./warmup/binary/binary.html"></iframe>
+    </div>
+    <div class="content" id="n3">
+        <iframe src="./warmup/crypto/crypto.html"></iframe>
+    </div>
+    <div class="content" id="n4">
+        <iframe src="./warmup/web/web.html"></iframe>
+    </div>
+    <div class="content" id="n5">
+        <iframe src="./warmup/misc/misc.html"></iframe>
+    </div>
+    <div class="content" id="n6">
+        <iframe src="./warmup/notice/notice.html"></iframe>
+    </div>
+    <script>
+        let loader = document.getElementById("Loading");
+        var iframe = document.createElement("iframe");
+        iframe.id = "iframe0";
+        iframe.parentElement = document.getElementById("n0");
+        window.onload = function () {
+            loader.parentNode.removeChild(loader);
+            iframe.src = "./ucatflagsindex.html";
+            if (iframe.attachEvent){
+                iframe.attachEvent("onload", function(){
+                    document.getElementById("n0Loading").style.display = "none";
+                });
+            } else {
+                iframe.onload = function(){
+                    document.getElementById("n0Loading").style.display = "none";
+                };
+            }
+            document.body.appendChild(iframe);
+        }
+    </script>
+    <script>
+        const n = 6;
+        function selected(k) {
+            for (let i = 0; i <= n; i++) {
+                document.getElementById("k" + String(i)).classList.remove("active");
+                document.getElementById("n" + String(i)).style.display = "none";
+            }
+            document.getElementById("k" + String(k)).classList.add("active");
+            document.getElementById("n" + String(k)).style.display = "";
+        }
+        // selected(n);
+    </script>
+    <script src="./src/js/nav0.js"></script>
+</body>
+
+</html>

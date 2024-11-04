@@ -1,0 +1,67 @@
+.kg {
+    word-spacing: 1em;
+}
+
+.kg2 {
+    word-spacing: 2em;
+}
+
+.kg3 {
+    word-spacing: 10px;
+}
+
+/* logo样式 */
+.ucatflagslogo {
+    font-size: 0.5rem;
+    font-family: 'Courier New', monospace, Consolas, Ubuntu;
+    text-align: center;
+    font-weight: bolder;
+    white-space: pre-wrap;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 霓虹灯动画 */
+.neon {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FFFC00;
+}
+
+.flux {
+    text-shadow: 0 0 1vw #10ff4c, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #03C03C;
+}
+
+.container {
+    font-family: 'Noto Serif SC', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+
+.custom-title {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(4, 180, 4);
+}
+
+.custom-title span:nth-child(2) {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+}
+
+.custom-title span:nth-child(3) {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(93, 93, 236);
+}
+
+.custom-title span:nth-child(4) {
+    color: #ffffff;
+}

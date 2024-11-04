@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTF MISC 题目概览</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+  body {
+    font-family: 'Noto Serif SC', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea; /* 银灰色背景 */
+    font-size: 20px;
+    overflow-x: hidden;
+  }
+  .container {
+    padding-left: 5vh;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  header {
+    background: #34495e; /* 深青色 */
+    color: white;
+    padding-top: 30px;
+    min-height: 30px;
+    border-bottom: #16a085 3px solid; /* 青绿色 */
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+  header ul {
+    padding: 0;
+    list-style: none;
+  }
+  header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  header #branding {
+    float: left;
+  }
+  header #branding h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  header nav {
+    float: right;
+    margin-top: 10px;
+  }
+  header .highlight, header .current a {
+    color: #1abc9c; /* 浅青绿色 */
+    font-weight: bold;
+  }
+  section#main {
+    padding: 15px;
+    background: white;
+  }
+  footer {
+    background: #34495e; /* 深青色 */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  h1, h2, h3 {
+    color: #34495e; /* 深青色 */
+  }
+  a {
+    color: #34495e; /* 深青色 */
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+    </div>
+  </header>
+
+  <section id="main">
+    <div class="container">
+      <h2>关于 MISC 安全杂项 你可以知道的</h2>
+      <p><strong>MISC（Miscellaneous）</strong>是CTF竞赛中的一个包罗万象的类别，它包括了除了传统的二进制漏洞利用、逆向工程、密码学和Web安全之外的各种题目。这类题目通常涉及文件分析、隐写术、流量分析、编码和解码等。</p>
+
+      <h3 id="knowledge-points">MISC 基础知识点</h3>
+      <ul>
+        <li><strong>文件格式分析</strong>：识别和解析不同文件格式的结构和元数据</li>
+        <li><strong>隐写术</strong>：在媒体文件中隐藏信息的技术和检测方法</li>
+        <li><strong>编码与解码</strong>：了解各种编码方案，如Base64、ROT13、凯撒密码等</li>
+        <li><strong>流量分析</strong>：分析网络流量包，识别协议和潜在的数据泄露</li>
+        <li><strong>数据恢复</strong>：从损坏的文件或存储介质中恢复数据</li>
+        <li><strong>取证分析</strong>：从系统日志、内存转储等中提取有用信息</li>
+        <li><strong>图像和音频分析</strong>：分析图像和音频文件以提取隐藏信息或验证真实性</li>
+      </ul>
+
+      <h3 id="tools">MISC 解题工具</h3>
+      <ul>
+        <li><strong>文件分析工具</strong>：binwalk, foremost, trid</li>
+        <li><strong>隐写分析工具</strong>：stegsolve, exiftool</li>
+        <li><strong>编码/解码工具</strong>：cyberchef, base64 decoder/encoder</li>
+        <li><strong>流量分析工具</strong>：Wireshark, tcpdump</li>
+        <li><strong>数据恢复工具</strong>：testdisk, photorec</li>
+        <li><strong>取证框架</strong>：Autopsy, Volatility</li>
+        <li><strong>图像分析工具</strong>：GIMP, Audacity</li>
+        <li><strong>脚本编写工具</strong>：Python, Bash, PowerShell</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>版权所有 &copy; 2024 UCATFLAGS 组委会</p>
+  </footer>
+</body>
+</html>

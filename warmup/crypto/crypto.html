@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>密码学概览</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+  body {
+    font-family: 'Noto Serif SC', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-size: 20px;
+    overflow-x: hidden;
+  }
+  .container {
+    padding-left: 5vh;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  header {
+    background: #50b3a2;
+    color: white;
+    padding-top: 30px;
+    min-height: 30px;
+    border-bottom: #e8491d 3px solid;
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+  header ul {
+    padding: 0;
+    list-style: none;
+  }
+  header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  header #branding {
+    float: left;
+  }
+  header #branding h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  header nav {
+    float: right;
+    margin-top: 10px;
+  }
+  header .highlight, header .current a {
+    color: #e8491d;
+    font-weight: bold;
+  }
+  section#main {
+    padding: 15px;
+    background: white;
+  }
+  footer {
+    background: #50b3a2;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  h1, h2, h3 {
+    color: #50b3a2;
+  }
+  a {
+    color: #50b3a2;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+    </div>
+  </header>
+
+  <section id="main">
+    <div class="container">
+      <h2>关于 Crypto 密码学 你可以知道的</h2>
+      <p><strong>Crypto（密码学方向）</strong>是CTF竞赛中的一个重要方向，它主要涉及<strong>古典密码</strong>或<strong>现代密码学</strong>中密码学算法、加密、解密、密码学原理等。Crypto题目主要考察选手对密码学算法的理解、掌握能力。</p>
+
+      <h3 id="common-algorithms">常见密码算法</h3>
+      <ul>
+        <li><strong>常见的对称密码算法：</strong>DES、AES、IDEA、RC4、SM4、ZUC等。</li>
+        <li><strong>常见的非对称密码算法：</strong>RSA、DSA、ECC等。</li>
+        <li><strong>常见的哈希算法：</strong>MD5、SHA1、SHA256、SHA512等。</li>
+        <li><strong>常见的密码学应用场景：</strong>加密通信、数字签名、同态加密、容错协议、零知识证明等。</li>
+      </ul>
+
+      <h3 id="research-objects">常见密码学研究对象</h3>
+      <ul>
+        <li>分组密码与流密码，以及相关的多项式理论</li>
+        <li>大整数因子分解问题</li>
+        <li>离散对数问题</li>
+        <li>椭圆曲线点群及其上的自同态</li>
+        <li>格与格方法的使用</li>
+        <li>密码学协议脆弱性</li>
+      </ul>
+
+      <h3 id="tools">常见密码学工具</h3>
+      <p><strong>Python常用库：</strong>pycryptodome、gmpy2、sympy</p>
+      <p><strong>常见工具：</strong></p>
+      <ul>
+        <li>数学运算工具：sagemath</li>
+        <li>古典密码工具：cyberchef</li>
+        <li>因子分解相关工具：yafu、factordb</li>
+        <li>流量分析工具：Wireshark</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>版权所有 &copy; 2024 UCATFLAGS 组委会</p>
+  </footer>
+</body>
+</html>

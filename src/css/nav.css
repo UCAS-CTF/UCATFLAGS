@@ -1,0 +1,138 @@
+.menu-bar {
+  font-family: 'Noto Serif SC', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  right: 0;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+.menu-bar img {
+  width: 30%;
+  min-width: 100px;
+  height: auto;
+  padding: 15px 15px;
+}
+
+.menu-bar a {
+  margin: 10px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-size: calc(0.15rem + 10px);
+  text-transform: uppercase;
+}
+
+.menu-bar a:link,
+.menu-bar a:visited {
+  background-color: rgb(255, 234, 0);
+  color: black;
+}
+
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+}
+
+.hamburger .line {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin-bottom: 6px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover .line {
+  transform: scaleY(1.2);
+}
+
+.hamburger:active .line {
+  transform: scaleY(0.8);
+}
+
+.hamburger:active .line:nth-child(1) {
+  transform: translateY(7px) scaleY(1) rotate(-45deg);
+}
+
+.hamburger:active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger:active .line:nth-child(3) {
+  transform: translateY(-7px) scaleY(1) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(7px) scaleY(1) rotate(-45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-7px) scaleY(1) rotate(45deg);
+}
+
+.menu-bar-link {
+  position: fixed;
+  right: 0;
+  width: 30%;
+  min-width: 100px;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-bar-link a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 234, 0);
+}
+
+.menu-bar-link.hide {
+  overflow: hidden;
+  transform: translateX(200%);
+  opacity: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .menu-bar-link.hide {
+      overflow: hidden;
+      transform: translateX(0);
+      opacity: 1;
+  }
+
+  .menu-bar-link {
+      display: block;
+      position: static;
+      width: auto;
+      margin-right: 20px;
+      background: none;
+  }
+
+  .menu-bar-link a {
+      margin: 0;
+      display: inline-block;
+      padding: 10px;
+  }
+
+  .hamburger {
+      display: none;
+  }
+}

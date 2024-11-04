@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCATFLAGS-2024</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+        * {
+            box-sizing: border-box
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body {
+            font-family: Arial, sans-serif, Ubuntu;
+            background-color: rgb(0, 0, 0);
+            color: #c0c0c0;
+            top: 0;
+            left: 0;
+            padding-top: 50px;
+            font-size: 20px;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .anchor {
+            padding-top: 3rem;
+        }
+    </style>
+    <link rel="stylesheet" href="./src/css/clock.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/nav.css">
+    <link rel="stylesheet" href="./src/css/table.css">
+</head>
+
+<body>
+    <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; z-index: 9999;" id="Loading"></iframe>
+    <nav class="menu-bar">
+        <img src="./src/img/output.gif" alt="GIF 1">
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <div class="menu-bar-link hide">
+            <a href="#"><b>回到顶部</b></a>
+            <a href="#about"><b>竞赛介绍</b></a>
+            <a href="#time"><b>比赛时间</b></a>
+            <a href="#join"><b>报名方式</b></a>
+            <a href="#discipline"><b>赛事纪律</b></a>
+        </div>
+    </nav>
+    
+<div class="ucatflagslogo">
+    <p class="neon">
+    __  ___________  ______________    ___   ___________
+   / / / / ____/   |/_  __/ ____/ /   /   | / ____/ ___/
+  / / / / /   / /| | / / / /_  / /   / /| |/ / __ \__ \ 
+ / /_/ / /___/ ___ |/ / / __/ / /___/ ___ / /_/ /___/ / 
+ \____/\____/_/  |_/_/ /_/   /_____/_/  |_\____//____/  
+    </p>
+    <p class="flux">
+    ___  ___  ___ ____
+   |_  |/ _ \|_  / / /
+  / __// // / __/_  _/
+ /____/\___/____//_/  
+    </p>
+</div>
+
+<div class="display">
+    <div id="clocknumber" class="row">
+        <div class="col"><div>8</div><div id="char01">0</div><div id="char02">0</div></div>
+        <div class="col"><div>8</div><div id="char11">0</div><div id="char12">0</div></div>
+        <div class="col"><div>8</div><div id="char21">d</div><div id="char22">d</div></div>
+        <div class="col"><div>&ensp;</div><div id="char31">&ensp;</div><div id="char32">&ensp;</div></div>
+        <div class="col"><div>8</div><div id="char41">0</div><div id="char42">0</div></div>
+        <div class="col"><div>8</div><div id="char51">0</div><div id="char52">0</div></div>
+        <div class="col"><div>8</div><div id="char61">h</div><div id="char62">h</div></div>
+        <div class="col"><div>&ensp;</div><div id="char71">&ensp;</div><div id="char72">&ensp;</div></div>
+        <div class="col"><div>8</div><div id="char81">0</div><div id="char82">0</div></div>
+        <div class="col"><div>8</div><div id="char91">0</div><div id="char92">0</div></div>
+        <div class="col"><div>8</div><div id="char101">m</div><div id="char102">m</div></div>
+        <div class="col"><div>&ensp;</div><div id="char111">&ensp;</div><div id="char112">&ensp;</div></div>
+        <div class="col"><div>8</div><div id="char121">0</div><div id="char122">0</div></div>
+        <div class="col"><div>8</div><div id="char131">0</div><div id="char132">0</div></div>
+        <div class="col"><div>8</div><div id="char141">s</div><div id="char142">s</div></div>
+    </div>
+</div>
+
+    <div class="container">
+        <h2 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span class="anchor" id="about">$ UCATFLAGS 是什么</span>
+        </h2>
+        <p>UCATFLAGS
+            是由中国科学院大学本科CTF竞赛小组主办、本科部支持的一项中国科学院大学本科部级网络空间安全CTF赛事，旨在宣传网络空间安全知识，培养本科生的网络空间安全能力、创新精神与团队合作意识。同时引导大家相互学习、共同进步。本竞赛仅对在校本科生开放，将与校内本科CTF竞赛培训紧密结合、同时起到扩展参赛同学学科视野的作用。
+        </p>
+
+        <h2 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span>$ UCATFLAGS 赛制</span>
+        </h2>
+        <p>UCATFLAGS 比赛为团队赛，根据年级分为四个组别，若年级不同，则按队内队员最高年级分配组别。UCATFLAGS
+            比赛采用线上CTF解题和线下知识竞赛相结合的形式，线上赛参赛队伍通过在线环境交互或者文件离线分析，利用相关技术获得特定格式的字符串，获取对应分值。综合竞赛表现与线上、线下答题分数分年级进行排名。</p>
+
+        <h3 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span>$ 参赛资格</span>
+        </h3>
+        <p>中国科学院大学在校本科生均可参加，年级专业不限。</p>
+
+        <h3 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span>$ 参赛队伍成员组成</span>
+        </h3>
+        <p>参赛学生以队为单位参赛，一二年级队伍最多为4人，三四年级队伍最多为3人，各队伍人数至少1人。若队内存在队员为不同年级，则需按队内队员最高年级组别进行要求。</p>
+
+        <h3 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span class="anchor" id="time">$ 比赛时间</span>
+        </h3>
+        <ul>
+            <li>线下网安知识竞赛：2024年11月23日20:30~21:00</li>
+            <li>线上CTF：2024年11月27日08:00-12月01日15:00</li>
+        </ul>
+
+        <h3 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span>$ 比赛流程</span>
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>比赛时间</th>
+                    <th>比赛项目</th>
+                    <th>比赛形式</th>
+                    <th>项目内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024年11月23日</td>
+                    <td>网安知识竞赛</td>
+                    <td>线下限时问卷</td>
+                    <td>各队在指定地点限时闭卷作答，不允许队内队间讨论，每位同学独立作答，最后成绩根据各队正确答案的并集确定。</td>
+                </tr>
+                <tr>
+                    <td>2024年11月27日-12月1日</td>
+                    <td>CTF</td>
+                    <td>线上限时答题</td>
+                    <td>经典线上CTF赛制，队伍在指定时间段内，答题时间限时，答题过程中允许利用互联网获取静态资料、仅允许队内交流，不允许向队伍之外的人员求助，一旦发现即取消全部成绩。<strong style="color:rgb(255, 59, 104)">答题结束后，队伍需在指定时间内将答题思路整理成压缩包提交至指定邮箱，若未提交，则视为作弊，队伍将失去所有分值。</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span class="anchor" id="content">$ 赛题设置</span>
+        </h3>
+        <table style="text-align:center;">
+            <thead>
+                <tr>
+                    <th>考核阶段</th>
+                    <th>考核内容</th>
+                    <th>题目数量</th>
+                    <th>难度等级</th>
+                    <th>考核形式</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">网安基础知识竞赛</td>
+                    <td>网络空间安全基础知识（单选）</td>
+                    <td>15道</td>
+                    <td>初级</td>
+                    <td rowspan="2">限时问卷</td>
+                </tr>
+                <tr>
+                    <td>网络空间安全基础知识（多选）</td>
+                    <td>15道</td>
+                    <td>初中级</td>
+                </tr>
+                <tr>
+                    <td rowspan="7">CTF夺旗</td>
+                    <td>编程基础（PPC）</td>
+                    <td>10道</td>
+                    <td>初中级</td>
+                    <td rowspan="7">限时CTF</td>
+                </tr>
+                <tr>
+                    <td>密码学（Crypto）</td>
+                    <td>6道</td>
+                    <td>中高级</td>
+                </tr>
+                <tr>
+                    <td>Web安全（Web）</td>
+                    <td>3道</td>
+                    <td>初级</td>
+                </tr>
+                <tr>
+                    <td>逆向工程（Reverse）</td>
+                    <td>9道</td>
+                    <td>初中级</td>
+                </tr>
+                <tr>
+                    <td>漏洞挖掘（Pwn）</td>
+                    <td>6道</td>
+                    <td>中高级</td>
+                </tr>
+                <tr>
+                    <td>安全杂项（Misc）</td>
+                    <td>6道</td>
+                    <td>初中级</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span>$ 评分系统</span>
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>竞赛类型</th>
+                    <th>题目类型</th>
+                    <th>每题分值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">网安基础知识竞赛</td>
+                    <td>单选</td>
+                    <td>每题10分</td>
+                </tr>
+                <tr>
+                    <td>多选</td>
+                    <td>每题15分</td>
+                </tr>
+                <tr>
+                    <td rowspan="1">CTF</td>
+                    <td>CTF赛题</td>
+                    <td>50到500分不等，每50分为一档，分值固定，不随解题人数的增加而降低分值。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>最后两项比赛得分直接叠加得到总分，根据总分<strong style="color:aquamarine">分年级</strong>对各队进行排名。</p>
+
+        <h2 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span class="anchor" id="discipline">$ 赛事纪律</span>
+        </h2>
+        <ol>
+            <li style="color:red;">
+                参赛队伍不允许队间交流、参赛队伍不得使用任何非法手段获取答案，包括但不限于向队伍外的人员求助、攻击比赛服务器等等。但凡出现竞赛违规、违纪行为，则取消参赛资格并以适当方式进行通报批评。</li>
+            <ul>
+                <li>禁止参赛队员弄虚作假，否则将取消参赛资格。</li>
+                <li>参赛队伍不得利用任何工具、软件、设备、工具等，向比赛服务器发送任何非法请求。</li>
+            </ul>
+            <li style="color:red;">在比赛结束一天内需要提交简要的答题思路交由主办方检查，若未提交，则视为作弊，队伍将失去所有分值。</li>
+        </ol>
+
+        <h2 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span class="anchor" id="join">$ UCATFLAGS 报名方式</span>
+        </h2>
+        <p>点击链接进行报名：<a style="color:aquamarine;" href="https://www.wjx.cn/vm/hG49aBH.aspx#">https://www.wjx.cn/vm/hG49aBH.aspx#</a> </p>
+        <p style="color:yellow;">报名截止时间：2024年11月21日23:59</p>
+        <p>若有其他问题请联系邮箱：ucatflags@163.com</p>
+
+        <h2 class="custom-title">
+            <span>@ucaser</span>
+            <span>:</span>
+            <span>~/</span>
+            <span>$ UCATFLAGS 考核大纲</span>
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>竞赛类型</th>
+                    <th>子项目</th>
+                    <th>内容描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>网安基础知识竞赛</td>
+                    <td>网络空间安全基础知识</td>
+                    <td>涵盖网络空间安全的基础知识，包括但不限于网络空间安全所包含的领域、法律常识、常见攻击与著名网络空间安全事件。</td>
+                </tr>
+                <tr>
+                    <td rowspan="6">CTF夺旗</td>
+                    <td>编程基础（PPC）</td>
+                    <td>考察选手的基本编程能力，包括C/C++、Python等语言的基本语法、数据结构、文件操作等。</td>
+                </tr>
+                <tr>
+                    <td>密码学（Crypto）</td>
+                    <td>考察选手对密码学相关知识的掌握情况，包括编码解码、古典密码学、RSA、AES、DES、SM2、SM4现代密码学算法、后量子密码学等。</td>
+                </tr>
+                <tr>
+                    <td>Web安全（Web）</td>
+                    <td>考察选手对WEB应用常见安全风险和网络攻击的掌握程度，包括通用框架和中间件漏洞、反序列化、SQL注入、文件包含、文件上传、命令执行、权限绕过、弱口令等常见安全问题，及常用Web安全检测及对抗技术、漏洞挖掘与利用技术手段等。
+                    </td>
+                </tr>
+                <tr>
+                    <td>逆向工程（Reverse）</td>
+                    <td>考察选手对Windows/Linux/Android/IOS/鸿蒙在X86/X86_64/Arm/RISC-V平台的二进制代码的逆向分析和理解能力，主要包括多种反汇编、反编译逆向工具的使用，脱壳、调试技巧，加解密、反调试和代码混淆，恶意样本分析等技术。
+                    </td>
+                </tr>
+                <tr>
+                    <td>漏洞挖掘（Pwn）</td>
+                    <td>考察选手对于二进制漏洞的挖掘和利用能力，包括堆栈溢出、格式化漏洞、UAF、Double Free等常见二进制漏洞，选手需要分析并发现程序漏洞，进行漏洞利用。</td>
+                </tr>
+                <tr>
+                    <td>安全杂项（Misc）</td>
+                    <td>考察选手的综合分析能力，人工智能攻防应用技术能力，包括图片隐写、视频隐写、文档隐写、流量分析、协议分析、日志分析、音视频伪造、AI欺骗、关联分析等相关技术。</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h2>其他</h2>
+        <p>本章程的解释权由 UCATFLAGS 组委会所有。</p>
+    </div>
+
+    <script>
+        let loader = document.getElementById("Loading");
+        window.onload = function () {
+            // delete loader
+            loader.parentNode.removeChild(loader);
+        }
+    </script>
+    <script src="./src/js/clock.js"></script>
+    <script src="./src/js/style.js"></script>
+    <script src="./src/js/nav.js"></script>
+</body>
+
+</html>

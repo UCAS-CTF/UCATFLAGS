@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTF Web 题目概览</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+    body {
+      font-family: 'Noto Serif SC', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-size: 20px;
+      overflow-x: hidden;
+    }
+    .container {
+      padding-left: 5vh;
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: #d35400;
+      color: white;
+      padding-top: 30px;
+      min-height: 30px;
+      border-bottom: #c0392b 3px solid;
+    }
+    header a {
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+    header ul {
+      padding: 0;
+      list-style: none;
+    }
+    header li {
+      display: inline;
+      padding: 0 20px 0 20px;
+    }
+    header #branding {
+      float: left;
+    }
+    header #branding h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    header nav {
+      float: right;
+      margin-top: 10px;
+    }
+    header .highlight, header .current a {
+      color: #e67e22; /* 浅橙色 */
+      font-weight: bold;
+    }
+    section#main {
+      padding: 15px;
+      background: white;
+    }
+    footer {
+      background: #d35400; /* 深橙色 */
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+    }
+    h1, h2, h3 {
+      color: #d35400; /* 深橙色 */
+    }
+    a {
+      color: #d35400; /* 深橙色 */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+    </div>
+  </header>
+
+  <section id="main">
+    <div class="container">
+      <h2>关于 Web安全 你可以知道的</h2>
+      <p><strong>CTF Web 题目</strong>是CTF竞赛中的一种类型，主要涉及网络安全和Web应用的漏洞分析与利用。本页面将为您提供CTF Web题目的相关基础知识点和解题工具，帮助您更好地准备CTF Web类题目。</p>
+
+      <h3 id="knowledge-points">CTF Web 基础知识点</h3>
+      <ul>
+        <li><strong>HTTP协议基础</strong>：请求与响应、状态码、方法（GET, POST, PUT, DELETE等）</li>
+        <li><strong>Web服务器基础</strong>：Apache, Nginx配置与使用</li>
+        <li><strong>脚本语言基础</strong>：PHP, JavaScript, Python等</li>
+        <li><strong>数据库安全</strong>：SQL注入、数据库权限管理</li>
+        <li><strong>Web应用安全</strong>：XSS、CSRF、SSRF、文件上传漏洞等</li>
+        <li><strong>同源策略与CORS</strong>：跨域资源共享</li>
+        <li><strong>Web缓存与优化</strong>：HTTP缓存头、CDN</li>
+        <li><strong>认证与授权机制</strong>：OAuth, JWT, Session, Cookie等</li>
+        <li><strong>Web安全测试与审计</strong>：代码审计、安全测试流程</li>
+      </ul>
+
+      <h3 id="tools">CTF Web 解题工具</h3>
+      <ul>
+        <li><strong>浏览器开发者工具</strong>：Chrome DevTools, Firefox Developer Tools</li>
+        <li><strong>代理工具</strong>：Burp Suite, Fiddler, OWASP ZAP</li>
+        <li><strong>扫描与自动化测试工具</strong>：Nikto, Nessus, SQLMap</li>
+        <li><strong>代码审计工具</strong>：RIPS, Fortify, SonarQube</li>
+        <li><strong>安全测试框架</strong>：OWASP WebScarab, W3af</li>
+        <li><strong>操作系统与安全工具</strong>：Kali Linux, Metasploit, Wireshark</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>版权所有 &copy; 2024 UCATFLAGS 组委会</p>
+  </footer>
+</body>
+</html>
