@@ -1,0 +1,116 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.category {
+    margin-bottom: 30px;
+}
+
+.category h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.category a {
+    font-size: 15px;
+    display: block;
+}
+
+.card {
+    border: none;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #007BFF;
+    transition: background-color 0.3s;
+}
+
+.card.correct {
+    background-color: #9efad0;
+}
+
+.card:hover {
+    background-color: #e9e9e9;
+}
+
+.card.correct:hover {
+    background-color: rgb(144, 237, 195);
+}
+
+.card h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+.card p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+.submit-form {
+    margin-top: 20px;
+}
+
+.submit-form input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-form button:hover {
+    background-color: #0056b3;
+}
+
+.submit-form #result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.submit-form #result.success {
+    color: rgb(19, 242, 138);
+}
+
+.submit-form #result.error {
+    color: red;
+}
