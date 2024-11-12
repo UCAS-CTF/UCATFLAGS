@@ -137,4 +137,8 @@ function loadPage(data){
 
 window.onload = function() {
   loadPage(categories);
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> b1dbc762e5f8b2fc52d54d56ab3311dbe922a801
