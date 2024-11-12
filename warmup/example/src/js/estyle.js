@@ -1,11 +1,38 @@
-const categories = {};
+const categories = {
+    "Crypto": {
+        "crypto0": {
+            "name": "WarmUp",
+            "description": "Factor it and get the flag.",
+            "flag_md5": "644fb25498d8a7b62497946ad3de78b3",
+            "attachment": 
+                [
+                    "./attachment/crypto0/output.txt",
+                    "./attachment/crypto0/WarmUp.py"
+                ],
+            "writeup": "./writeup/crypto0-wp"
+        }
+    },
+    "Web": {
+        "web0": {
+            "name": "WarmUp",
+            "description": "Factor it and get the flag.",
+            "flag_md5": "263a99a627e433247f7d330e7ab75069",
+            "attachment": 
+                [
+                ],
+            "writeup": ""
+        }
+    }
+};
 
-fetch('./src/data/data.json')
-    .then(response => response.json())
-    .then(data => {
-      loadPage(data);
-    })
-    .catch(error => console.error('Error:', error));
+// const categories = {};
+
+// fetch('./src/data/data.json')
+//     .then(response => response.json())
+//     .then(data => {
+//       loadPage(data);
+//     })
+//     .catch(error => console.error('Error:', error));
 
 function generateCategories(ctfs) {
   const categoriesContainer = document.getElementById('categories');
