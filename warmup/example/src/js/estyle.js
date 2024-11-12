@@ -1,10 +1,9 @@
-var categories = {};
+const categories = {};
 
 fetch('./src/data/data.json')
     .then(response => response.json())
     .then(data => {
-      categories = data;
-      Object.freeze(categories);
+      loadPage(data);
     })
     .catch(error => console.error('Error:', error));
 
@@ -41,7 +40,7 @@ function generateCategories(ctfs) {
       submitForm.className = 'submit-form';
       submitForm.innerHTML = `
         <input type="text" id="flag-${challenge}" placeholder="请输入你的flag">
-        <button onclick="validateFlag('${challenge}', '${category}')" id="submit-${challenge}">提交</button>
+        <button onclick="validateFlag('${challenge}', '${category}', '${ctfs}')" id="submit-${challenge}">提交</button>
         <p id="result-${challenge}"></p>
       `;
       cardDiv.appendChild(submitForm);
@@ -56,12 +55,11 @@ function generateCategories(ctfs) {
   }
 }
 
-function validateFlag(challenge, category) {
+function validateFlag(challenge, category, ctfs) {
   var flag = document.getElementById(`flag-${challenge}`).value;
   var result = document.getElementById(`result-${challenge}`);
-  var correctHash = categories[category][challenge]["flag_md5"];
+  var correctHash = ctfs[category][challenge]["flag_md5"];
   var hash = CryptoJS.MD5(flag).toString();
-  console.log(hash);
 
   if (hash === correctHash) {
     result.textContent = 'Flag正确！';
@@ -100,11 +98,15 @@ function StoreSoluted(challenge){
 //   localStorage.clear();
 // }
 
-window.onload = function() {
-  generateCategories(categories);
-  for(var i in categories){
-    for(var j in categories[i]){
+function loadPage(data){
+  generateCategories(data);
+  for(var i in data){
+    for(var j in data[i]){
       getSoluted(j);
     }
   }
+}
+
+window.onload = function() {
+  loadPage(categories);
 };
