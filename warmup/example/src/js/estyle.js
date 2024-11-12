@@ -67,7 +67,7 @@ function generateCategories(ctfs) {
       submitForm.className = 'submit-form';
       submitForm.innerHTML = `
         <input type="text" id="flag-${challenge}" placeholder="请输入你的flag">
-        <button onclick="validateFlag('${challenge}', '${category}', '${ctfs}')" id="submit-${challenge}">提交</button>
+        <button onclick="validateFlag('${challenge}', '${category}')" id="submit-${challenge}">提交</button>
         <p id="result-${challenge}"></p>
       `;
       cardDiv.appendChild(submitForm);
@@ -82,10 +82,10 @@ function generateCategories(ctfs) {
   }
 }
 
-function validateFlag(challenge, category, ctfs) {
+function validateFlag(challenge, category) {
   var flag = document.getElementById(`flag-${challenge}`).value;
   var result = document.getElementById(`result-${challenge}`);
-  var correctHash = ctfs[category][challenge]["flag_md5"];
+  var correctHash = categories[category][challenge]["flag_md5"];
   var hash = CryptoJS.MD5(flag).toString();
 
   if (hash === correctHash) {
