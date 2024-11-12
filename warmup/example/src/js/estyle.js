@@ -1,10 +1,12 @@
+var categories = {};
+
 fetch('./src/data/data.json')
     .then(response => response.json())
     .then(data => {
-        const categories = data;
+      categories = data;
+      Object.freeze(categories);
     })
     .catch(error => console.error('Error:', error));
-
 
 function generateCategories(ctfs) {
   const categoriesContainer = document.getElementById('categories');
