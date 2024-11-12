@@ -25,12 +25,13 @@ const categories = {
     }
 };
 
-// fetch('./src/data/data.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         const categories = data;
-//     })
-//     .catch(error => console.error('Error:', error));
+fetch('./src/data/data.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // const categories = data;
+    })
+    .catch(error => console.error('Error:', error));
 
 
 function generateCategories(ctfs) {
