@@ -96,12 +96,40 @@ function validateFlag(challenge, category) {
     var tb = document.getElementById(`submit-${challenge}`);
     tpl.parentElement.removeChild(tpl);
     tb.parentElement.removeChild(tb);
+    StoreSoluted(challenge);
   } else {
     result.textContent = 'Flag错误，请再试一次。';
     result.className = 'error';
   }
 }
 
+function getSoluted(challenge){
+  var result = document.getElementById(`result-${challenge}`);
+  var ifSoluted = localStorage.getItem(challenge);
+  if(ifSoluted == "soluted"){
+    result.textContent = 'Flag正确！';
+    result.className = 'success';
+    document.getElementById(`card-${challenge}`).className = 'card correct';
+    var tpl= document.getElementById(`flag-${challenge}`);
+    var tb = document.getElementById(`submit-${challenge}`);
+    tpl.parentElement.removeChild(tpl);
+    tb.parentElement.removeChild(tb);
+  }
+}
+
+function StoreSoluted(challenge){
+  localStorage.setItem(challenge, "soluted");
+}
+
+// function cleanSoluted(){
+//   localStorage.clear();
+// }
+
 window.onload = function() {
   generateCategories(categories);
+  for(var i in categories){
+    for(var j in categories[i]){
+      getSoluted(j);
+    }
+  }
 };
