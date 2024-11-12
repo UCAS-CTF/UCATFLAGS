@@ -12,15 +12,16 @@
             "writeup": "./writeup/crypto0-wp"
         }
     },
-    "Web": {
-        "web0": {
+    "Misc":{
+        "misc0": {
             "name": "WarmUp",
-            "description": "Factor it and get the flag.",
-            "flag_md5": "263a99a627e433247f7d330e7ab75069",
-            "attachment": 
+            "description": "Check the alphabetical order of the following encoded flag: <br> xfdwiodjv{zhofrph_wr_plvf}",
+            "flag_md5": "ea86bce16f51b1e05d2178b8da7ba3b5",
+            "attachment":
                 [
+
                 ],
-            "writeup": ""
+            "writeup": "./writeup/misc0-wp"
         }
     }
 }

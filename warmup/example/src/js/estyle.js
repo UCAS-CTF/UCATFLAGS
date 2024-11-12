@@ -1,38 +1,39 @@
 const categories = {
-    "Crypto": {
-        "crypto0": {
-            "name": "WarmUp",
-            "description": "Factor it and get the flag.",
-            "flag_md5": "644fb25498d8a7b62497946ad3de78b3",
-            "attachment": 
-                [
-                    "./attachment/crypto0/output.txt",
-                    "./attachment/crypto0/WarmUp.py"
-                ],
-            "writeup": "./writeup/crypto0-wp"
-        }
-    },
-    "Web": {
-        "web0": {
-            "name": "WarmUp",
-            "description": "Factor it and get the flag.",
-            "flag_md5": "263a99a627e433247f7d330e7ab75069",
-            "attachment": 
-                [
-                ],
-            "writeup": ""
-        }
-    }
+  "Crypto": {
+      "crypto0": {
+          "name": "WarmUp",
+          "description": "Factor it and get the flag.",
+          "flag_md5": "644fb25498d8a7b62497946ad3de78b3",
+          "attachment": 
+              [
+                  "./attachment/crypto0/output.txt",
+                  "./attachment/crypto0/WarmUp.py"
+              ],
+          "writeup": "./writeup/crypto0-wp"
+      }
+  },
+  "Misc":{
+      "misc0": {
+          "name": "WarmUp",
+          "description": "Check the alphabetical order of the following encoded flag: <br> xfdwiodjv{zhofrph_wr_plvf}",
+          "flag_md5": "ea86bce16f51b1e05d2178b8da7ba3b5",
+          "attachment":
+              [
+
+              ],
+          "writeup": "./writeup/misc0-wp"
+      }
+  }
 };
 
-fetch('./src/data/data.json')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        // const categories = data;
-    })
-    .catch(error => console.error('Error:', error));
+// const categories = {};
 
+// fetch('./src/data/data.json')
+//     .then(response => response.json())
+//     .then(data => {
+//       loadPage(data);
+//     })
+//     .catch(error => console.error('Error:', error));
 
 function generateCategories(ctfs) {
   const categoriesContainer = document.getElementById('categories');
@@ -87,7 +88,6 @@ function validateFlag(challenge, category) {
   var result = document.getElementById(`result-${challenge}`);
   var correctHash = categories[category][challenge]["flag_md5"];
   var hash = CryptoJS.MD5(flag).toString();
-  console.log(hash);
 
   if (hash === correctHash) {
     result.textContent = 'Flag正确！';
@@ -126,11 +126,15 @@ function StoreSoluted(challenge){
 //   localStorage.clear();
 // }
 
-window.onload = function() {
-  generateCategories(categories);
-  for(var i in categories){
-    for(var j in categories[i]){
+function loadPage(data){
+  generateCategories(data);
+  for(var i in data){
+    for(var j in data[i]){
       getSoluted(j);
     }
   }
+}
+
+window.onload = function() {
+  loadPage(categories);
 };
