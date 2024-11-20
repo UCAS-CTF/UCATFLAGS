@@ -14,7 +14,7 @@
     <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; z-index: 9999;" id="Loading"></iframe>
     <ul class="icon-nav">
         <li> 
-            <a href = "#n1" id = "k0" onClick = "selected(0);">
+            <a href = "#n1" id = "k0" onClick = "selected(0); document.getElementById('iframe0').src='ucatflagsindex.html';">
                 <i class="fa fa-home"></i> 
                 <span>首页</span> 
             </a> 
@@ -49,6 +49,12 @@
                 <span>安全杂项 Misc</span> 
             </a> 
         </li>
+        <li> 
+            <a href = "#n7" id = "k7" onClick = "selected(7); document.getElementById('f7').src='./warmup/example/example.html';">
+                <i class="fa fa-map"></i> 
+                <span>题目示例 Demo</span> 
+            </a> 
+        </li>
         <li class="split"> 
             <a href = "#n6" id = "k6" onClick = "selected(6);">
                 <i class="fa fa-bell"></i> 
@@ -57,7 +63,7 @@
         </li>
     </ul>
     <div class="content" id="n0">
-        <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; display: block; z-index:9;" id="n0Loading"></iframe>
+        <iframe src="./ucatflagsindex.html" id="iframe0"></iframe>
     </div>
     <div class="content" id="n1">
         <iframe src="./warmup/ppc/ppc.html"></iframe>
@@ -74,31 +80,20 @@
     <div class="content" id="n5">
         <iframe src="./warmup/misc/misc.html"></iframe>
     </div>
+    <div class="content" id="n7">
+        <iframe src="./warmup/example/example.html" id="f7"></iframe>
+    </div>
     <div class="content" id="n6">
         <iframe src="./warmup/notice/notice.html"></iframe>
     </div>
     <script>
         let loader = document.getElementById("Loading");
-        var iframe = document.createElement("iframe");
-        iframe.id = "iframe0";
-        iframe.parentElement = document.getElementById("n0");
         window.onload = function () {
             loader.parentNode.removeChild(loader);
-            iframe.src = "./ucatflagsindex.html";
-            if (iframe.attachEvent){
-                iframe.attachEvent("onload", function(){
-                    document.getElementById("n0Loading").style.display = "none";
-                });
-            } else {
-                iframe.onload = function(){
-                    document.getElementById("n0Loading").style.display = "none";
-                };
-            }
-            document.body.appendChild(iframe);
         }
     </script>
     <script>
-        const n = 6;
+        const n = 7;
         function selected(k) {
             for (let i = 0; i <= n; i++) {
                 document.getElementById("k" + String(i)).classList.remove("active");

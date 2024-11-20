@@ -22,7 +22,8 @@ function calculateTimeDifference(targetDate, targetTime) {
     timeDifferenceStr += remainingHours.toString().padStart(2, '0') + 'h ';
     timeDifferenceStr += remainingMinutes.toString().padStart(2, '0') + 'm ';
     timeDifferenceStr += remainingSeconds.toString().padStart(2, '0') + 's';
-    return timeDifferenceStr;
+
+    return timeDifferenceStr.padStart(LEN, "0");
 }
 // function updateTimeAndDate() {
 //     const displayStr = calculateTimeDifference('2024-11-26', '08:00:00');
