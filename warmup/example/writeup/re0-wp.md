@@ -142,3 +142,35 @@ unsigned char nbytes_4[] = {
 ```
 
 对上述数组利用类似方法反推回去即可获得flag。
+
+当然你也可以改写代码为如下形式：
+```c
+# include <stdio.h>
+
+__int64 __fastcall inv_myhash(unsigned __int8 a1, int a2){
+    return (a1 << (8 - a2 % 8)) | (unsigned int)((int)a1 >> (a2 % 8));
+}
+
+int __fastcall main(int argc, const char **argv, const char **envp){
+  char v3; // bl
+  int i; // [rsp+8h] [rbp-B8h]
+  long long nbytes_4[5]; // [rsp+10h] [rbp-B0h]
+
+  nbytes_4[0] = 0xB3588D66A385C675LL;
+  nbytes_4[1] = 0xB60C6CC6995DF673LL;
+  nbytes_4[2] = 0x999DAC25FAC8BE23LL;
+  nbytes_4[3] = 0x274CE8E62A7DCA35LL;
+  nbytes_4[4] = 0xBE48ECE64A496633LL;
+  for (i = 0; i < 41; ++i ){
+    v3 = *((char *)nbytes_4 + i);
+    printf("%c", (unsigned __int8)inv_myhash(v3, (unsigned int)i));
+  }
+  puts("Success");
+  return 0;
+}
+```
+
+最后获得flag：
+```txt
+ucatflags{W3lc0m#_2_Rev35e_EnG1N33RIng!}
+```
