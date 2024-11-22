@@ -23,6 +23,18 @@ const categories = {
               ],
           "writeup": "./writeup/misc0-wp"
       }
+  },
+  "Reverse":{
+      "re0": {
+          "name": "WarmUp",
+          "description": "Reverse the file and get the flag.",
+          "flag_md5": "0b656bfd1920926caa6b94310709a8b4",
+          "attachment":
+              [
+                "./attachment/re0/warmup",
+              ],
+          "writeup": "./writeup/re0-wp"
+      }
   }
 };
 
