@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 ## ppc0-WriteUp
 
 模拟竖式加法即可。可以按如下方式补全代码：
