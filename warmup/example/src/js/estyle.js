@@ -11,7 +11,7 @@ const categories = {
                   "./attachment/ppc0/data.in"
                 ],
             "writeup": "./writeup/ppc0-wp",
-            "submit": true
+            "submit": false
       }
   },
   "Crypto": {
@@ -25,7 +25,7 @@ const categories = {
                   "./attachment/crypto0/WarmUp.py"
               ],
           "writeup": "./writeup/crypto0-wp",
-          "submit": true
+          "submit": false
       }
   },
   "Misc":{
@@ -38,7 +38,7 @@ const categories = {
 
               ],
           "writeup": "./writeup/misc0-wp",
-          "submit": true
+          "submit": false
       }
   },
   "Reverse":{
@@ -51,7 +51,7 @@ const categories = {
                 "./attachment/re0/warmup",
               ],
           "writeup": "./writeup/re0-wp",
-          "submit": true
+          "submit": false
       }
   },
   "Pwn": {
