@@ -1,4 +1,19 @@
 const categories = {
+  "PPC": {
+      "ppc0": {
+            "name": "WarmUp",
+            "description": "给定两个大整数a和b，试求其和作为flag（详见example.txt）。",
+            "flag_md5": "968132163c598d7e08dd1b9e00c1bd6a",
+            "attachment":
+                [
+                  "./attachment/ppc0/example.txt",
+                  "./attachment/ppc0/add.c",
+                  "./attachment/ppc0/data.in"
+                ],
+            "writeup": "./writeup/ppc0-wp",
+            "submit": true
+      }
+  },
   "Crypto": {
       "crypto0": {
           "name": "WarmUp",
@@ -9,7 +24,8 @@ const categories = {
                   "./attachment/crypto0/output.txt",
                   "./attachment/crypto0/WarmUp.py"
               ],
-          "writeup": "./writeup/crypto0-wp"
+          "writeup": "./writeup/crypto0-wp",
+          "submit": true
       }
   },
   "Misc":{
@@ -21,7 +37,8 @@ const categories = {
               [
 
               ],
-          "writeup": "./writeup/misc0-wp"
+          "writeup": "./writeup/misc0-wp",
+          "submit": true
       }
   },
   "Reverse":{
@@ -33,9 +50,23 @@ const categories = {
               [
                 "./attachment/re0/warmup",
               ],
-          "writeup": "./writeup/re0-wp"
+          "writeup": "./writeup/re0-wp",
+          "submit": true
       }
-  }
+  },
+  "Pwn": {
+      "pwn0": {
+            "name": "WarmUp",
+            "description": "Stack Overflow and get the flag.",
+            "flag_md5": "968132163c598d7e08dd1b9e00c1bd6a",
+            "attachment":
+                [
+                  "./attachment/pwn0/overflow3211"
+                ],
+            "writeup": "./writeup/pwn0-wp",
+            "submit": false
+      }
+  },
 };
 
 // const categories = {};
@@ -76,14 +107,16 @@ function generateCategories(ctfs) {
         });
         cardDiv.appendChild(attachmentsDiv);
       }
-      const submitForm = document.createElement('div');
-      submitForm.className = 'submit-form';
-      submitForm.innerHTML = `
-        <input type="text" id="flag-${challenge}" placeholder="请输入你的flag">
-        <button onclick="validateFlag('${challenge}', '${category}')" id="submit-${challenge}">提交</button>
-        <p id="result-${challenge}"></p>
-      `;
-      cardDiv.appendChild(submitForm);
+      if (challengeData.submit) {
+        const submitForm = document.createElement('div');
+        submitForm.className = 'submit-form';
+        submitForm.innerHTML = `
+          <input type="text" id="flag-${challenge}" placeholder="请输入你的flag">
+          <button onclick="validateFlag('${challenge}', '${category}')" id="submit-${challenge}">提交</button>
+          <p id="result-${challenge}"></p>
+        `;
+        cardDiv.appendChild(submitForm);
+      }
       categoryDiv.appendChild(cardDiv);
       const writeupLink = document.createElement('a');
       writeupLink.href = ctfs[category][challenge]['writeup'];
