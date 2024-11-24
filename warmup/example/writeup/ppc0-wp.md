@@ -1,11 +1,8 @@
----
-render_with_liquid: false
----
-
 ## ppc0-WriteUp
 
 模拟竖式加法即可。可以按如下方式补全代码：
 
+{% raw %}
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -44,6 +41,7 @@ int main() {
     return 0;
 }
 ```
+{% endraw %}
 
 PPC是程序编程基础区，本区的题目大多与此题相似，风格近似OI（信息学奥赛），但比OI简单很多，难度应该不会超过普及组前两题的难度。
 
